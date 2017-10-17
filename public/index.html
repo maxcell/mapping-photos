@@ -38,6 +38,17 @@ crossorigin=""></script>
       }).fitBounds(maxBounds)
 
       let tileLayer = L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(map)
+
+
+      let geocoder = L.Control.geocoder({
+        defaultMarkGeocode: false,
+        placeholder: "Enter location...",
+        showResultIcons: true
+      })
+      .on('markgeocode', (e) => {
+        var bbox = e.geocode.bbox;
+        map.fitBounds(bbox);
+      }).addTo(map);
       </script>
       <script type="text/javascript" src="/js/bundle.js"></script>
   </body>
