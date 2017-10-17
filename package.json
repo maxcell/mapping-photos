@@ -1,0 +1,25 @@
+{
+  "name": "mapping-photos",
+  "version": "1.0.0",
+  "description": "This is an example project that goes with a post over at Clarifai!",
+  "main": "app.js",
+  "dependencies": {
+    "browserify": "^14.4.0",
+    "clarifai": "^2.4.0",
+    "express": "^4.16.2",
+    "leaflet-control-geocoder": "^1.5.5",
+    "leaflet": "^1.2.0",
+    "watchify": "^3.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch-js": "watchify *.js public/js/bundle.js -dv",
+    "watch": "npm run watch-js",
+    "build-js": "browserify map.js > public/js/bundle.js",
+    "build": "npm run build-js",
+    "start": "npm run build && node app.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
